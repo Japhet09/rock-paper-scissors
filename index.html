@@ -6,48 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="main.js"></script>
 </head>
 
 <body>
 
 
 
-    <script>
-        function computerPlay() {
-            const randomNumber = Math.floor(Math.random() * 3);
-            if (randomNumber === 0) {
-                return 'rock';
-
-            } else if (randomNumber === 1) {
-                return 'paper';
-
-            } else {
-                return 'scissors';
-            }
-
-        }
-        const singleRound = function(playerSelection, computerSelection){
-            playerSelection.toLowerCase()
-            if (playerSelection==='rock'&&computerSelection=='paper'){
-                return 'You Lose! Paper beats Rock'
-            }else if(playerSelection==='rock'&&computerSelection=='scissor'){
-                return 'You win!, Rock crushes scissor'
-            }else if(playerSelection==='rock'&&computerSelection=='rock'){
-                return 'It is a tie, lets go for a rematch'
-            }
-        }
-       
-        const playerSelection = prompt('Choose your option:');
-        const computerSelection = computerPlay();
-    
-        singleRound(playerSelection,computerSelection)
-        
-        
-        
-
-
-
-    </script>
 </body>
 
 </html>
