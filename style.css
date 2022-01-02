@@ -13,3 +13,17 @@ button{
     background-color: rgb(245, 181, 102);
     border-radius: 5%;
 }
+.display{
+    font-size: 2em;
+    color: #1a0202;
+}
+.score{
+    font-size: 40px;
+ 
+    margin: 10px;
+}
+
+.win{
+    font-size: 4em;
+    color: #ec0e0e;
+}
