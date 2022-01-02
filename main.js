@@ -32,42 +32,6 @@ function computerPlay(){
         return `You Win! ${playerSelection} beats ${computerSelection}`
     }else if(playerSelection==='paper'&&computerSelection==='scissor'){
         return `You Lose! ${computerSelection} beats ${playerSelection}`
-<<<<<<< HEAD
-
-    }else if(playerSelection==='scissor'&&computerSelection==='rock'){
-        return `You Lose! ${computerSelection} beats ${playerSelection}`
-    }else if(playerSelection==='scissor'&&computerSelection==='paper'){
-        return `You Win! ${playerSelection} beats ${computerSelection}`
-
-    }else if(playerSelection===computerSelection){
-        return `It is a tie`
-    }
-
-}     
-
-
-
-//* A function that allow playing the game, then storing the result
-
-// Variables to keep score
-
-let computerScore = 0;
-let playerScore = 0;
-
-function game(){
-    const playerSelection = prompt('Enter your choice:')
-    let result = (playRound(playerSelection,computerPlay()))
-   
-
-    if (result.includes('Win')){
-        playerScore +=1
-    }else if(result.includes('Lose')){
-        computerScore +=1
-    }
-    return  result
-}
- 
-=======
 
     }else if(playerSelection==='scissor'&&computerSelection==='rock'){
         return `You Lose! ${computerSelection} beats ${playerSelection}`
@@ -186,4 +150,3 @@ for(let button of buttons){
 
     
 
->>>>>>> rps-ui
