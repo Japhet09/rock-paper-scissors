@@ -1,78 +1,88 @@
-// test to see everything works console.log('hello World') 
+//ROCK PAPER SCISSOR
+
+//*A FUNCTION THAT RANDOMLY RETURN ROCK, PAPER OR SCISSOR
+
 function computerPlay(){
-    const randomNumber = Math.floor(Math.random()*3)
-    if (randomNumber===0){
-        return 'rock'
-    }else if(randomNumber===1){
-        return 'paper'
-    }else{
-        return 'scissors'
+    let randomNumber = Math.floor(Math.random()*3)
+    switch(randomNumber){
+        case 0:
+            return 'rock';
+            break;
+        case 1:
+            return 'paper';
+            break;
+        case 2:
+            return 'scissor';
+            break;
     }
-}
-function computerPlay2(){
-    const randomNumber = Math.floor(Math.random()*3)
-    if (randomNumber===0){
-        return 'rock'
-    }else if(randomNumber===1){
-        return 'paper'
-    }else{
-        return 'scissors'
-    }
-}
+    
+  }
 
-function playRound(playerSelection, computerSelection){
-    //playerSelection = playerSelection.toLowerCase()
-    if (playerSelection==='rock'&&computerSelection==='paper'){
-        return 'computer win! Paper wraps Rock'
-    }else if(playerSelection==='rock'&&computerSelection==='scissors'){
-        return 'You win Rock crush scissors'
-    }else if(playerSelection==='paper'&&computerSelection==='scissors'){
-        return 'Computer win scissors cut paper'
+
+  //*A single round of play function with computer selection and user selection as parameters
+
+  function playRound(playerSelection,computerSelection){
+    playerSelection = playerSelection.toLowerCase()
+    if(playerSelection==='rock'&&computerSelection==='paper'){
+        return `You Lose! ${computerSelection} beats ${playerSelection}`
+    }else if(playerSelection==='rock'&&computerSelection==='scissor'){
+        return `You Win! ${playerSelection} beats ${computerSelection}`
+
     }else if(playerSelection==='paper'&&computerSelection==='rock'){
-        return 'You win paper wraps rock'
-    }else if(playerSelection==='scissors'&&computerSelection==='rock'){
-        return 'Computer win rock  beats scissors'
-    }else if(playerSelection==='scissors'&&computerSelection==='paper'){
-        return 'You win scissor beats paper'
-    }else{
-        return 'It  is a draw'
-    }
-}
+        return `You Win! ${playerSelection} beats ${computerSelection}`
+    }else if(playerSelection==='paper'&&computerSelection==='scissor'){
+        return `You Lose! ${computerSelection} beats ${playerSelection}`
 
-//console.log(playRound(playerSel,computerPlay()))
+    }else if(playerSelection==='scissor'&&computerSelection==='rock'){
+        return `You Lose! ${computerSelection} beats ${playerSelection}`
+    }else if(playerSelection==='scissor'&&computerSelection==='paper'){
+        return `You Win! ${playerSelection} beats ${computerSelection}`
+
+    }else if(playerSelection===computerSelection){
+        return `It is a tie`
+    }
+
+}     
+
+
+
+//* A function that allow playing the game, then storing the result
+
+// Variables to keep score
+
+let computerScore = 0;
+let playerScore = 0;
 
 function game(){
-    for(i=0;i<4; i++){
-        let playerSel= prompt('Choose your option: rock, paper or scissors')
-        return console.log(playRound(playerSel,computerPlay()))
+    const playerSelection = prompt('Enter your choice:')
+    let result = (playRound(playerSelection,computerPlay()))
+   
+
+    if (result.includes('Win')){
+        playerScore +=1
+    }else if(result.includes('Lose')){
+        computerScore +=1
     }
-    /*
-    return console.log(playRound(playerSel,computerPlay()))
-    return console.log(playRound(playerSel,computerPlay()))
-    return console.log(playRound(playerSel,computerPlay()))
-    return console.log(playRound(playerSel,computerPlay()))
-    return console.log(playRound(playerSel,computerPlay()))
-    
-    
-*/
-
-const button1 = document.createElement('button')
-button1.innerText = 'rock'
-button1.className = 'rock'
-    
-const button2 = document.createElement('button')
-button2.innerText = 'paper'
-button2.className = 'paper'
-
-    
-const button3 = document.createElement('button')
-button3.innerText = 'scissors'
-button3.className = 'scissors'
-    
-const body = document.querySelector('body')
-
-body.appendChild(button1)
-body.appendChild(button2)
-body.appendChild(button3)
-
+    return  result
 }
+ 
+//*ADDING A UI TO THE GAME
+
+//select the container
+const container = document.querySelector('.container')
+
+const rock = document.createElement('button')
+rock.innerText = 'rock'
+container.append(rock)
+
+const paper = document.createElement('button')
+paper.innerText = 'paper'
+container.appendChild(paper)
+
+const scissor = document.createElement('button')
+scissor.innerText = 'scissor'
+container.appendChild(scissor)
+
+const buttons = document.querySelectorAll('button')
+
+
